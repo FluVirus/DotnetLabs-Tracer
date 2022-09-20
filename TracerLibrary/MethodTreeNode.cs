@@ -8,5 +8,5 @@ namespace University.DotnetLabs.Lab1.TracerLibrary;
 
 public abstract class MethodTreeNode
 {
-    public LinkedList<MethodTreeNode> InternalMethods { get; } = new();
+    public LinkedList<MethodData> InternalMethods { get; } = new();
 }
