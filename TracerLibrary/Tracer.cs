@@ -14,7 +14,11 @@ public class Tracer : ITracer
         LinkedList<ThreadData> threads = new();
         foreach (Stack<MethodTreeNode> stack in _stacks.Values)
         {
-            ThreadData threadData = (ThreadData)stack.First();
+            ThreadData threadData = (ThreadData)stack.Last();
+            foreach (MethodData methodData in threadData.InternalMethods)
+            {
+                threadData.Duration = threadData.Duration.Add(methodData.Duration.Elapsed);
+            }
             threads.AddLast(threadData);
         }
         return new TraceResult(threads);
@@ -64,7 +68,6 @@ public class Tracer : ITracer
             throw new TracerStackException($"Unexpected StopTrace() in {className}.{methodName} . Expected {methodData.ClassName}.{methodData.MethodName} on stack.");
         }
         stack.Peek().InternalMethods.AddLast(methodData);
-        ThreadData threadData = (ThreadData) stack.First();
-        threadData.Duration = threadData.Duration.Add(methodData.Duration.Elapsed);
+        ThreadData threadData = (ThreadData) stack.Last();
     }
 }
