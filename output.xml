@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <thread id="1" time="492,3576 ms">
+    <method name="Main" class="University.DotnetLabs.Lab1.ConsoleSection.Program" time="492 ms" />
+  </thread>
+  <thread id="8" time="100,3434 ms">
+    <method name="&lt;Main&gt;b__5_0" class="University.DotnetLabs.Lab1.ConsoleSection.Program+&lt;&gt;c" time="100 ms" />
+  </thread>
+  <thread id="9" time="491,5605 ms">
+    <method name="Recursive" class="University.DotnetLabs.Lab1.ConsoleSection.Program" time="491 ms">
+      <method name="Recursive" class="University.DotnetLabs.Lab1.ConsoleSection.Program" time="410 ms">
+        <method name="Recursive" class="University.DotnetLabs.Lab1.ConsoleSection.Program" time="262 ms">
+          <method name="Recursive" class="University.DotnetLabs.Lab1.ConsoleSection.Program" time="210 ms">
+            <method name="Recursive" class="University.DotnetLabs.Lab1.ConsoleSection.Program" time="179 ms">
+              <method name="Recursive" class="University.DotnetLabs.Lab1.ConsoleSection.Program" time="155 ms">
+                <method name="Recursive" class="University.DotnetLabs.Lab1.ConsoleSection.Program" time="127 ms">
+                  <method name="Recursive" class="University.DotnetLabs.Lab1.ConsoleSection.Program" time="87 ms">
+                    <method name="Recursive" class="University.DotnetLabs.Lab1.ConsoleSection.Program" time="56 ms">
+                      <method name="Recursive" class="University.DotnetLabs.Lab1.ConsoleSection.Program" time="26 ms" />
+                    </method>
+                  </method>
+                </method>
+              </method>
+            </method>
+          </method>
+        </method>
+      </method>
+    </method>
+  </thread>
+</root>
