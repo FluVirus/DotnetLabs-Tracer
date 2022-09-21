@@ -1,5 +1,4 @@
-﻿
-using System.Xml;
+﻿using System.Xml;
 using University.DotnetLabs.Lab1.TracerLibrary;
 
 namespace University.DotnetLabs.Lab1.ConsoleSection.StreamWriters;

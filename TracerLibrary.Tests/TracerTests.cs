@@ -1,5 +1,6 @@
 using University.DotnetLabs.Lab1.TracerLibrary.Exceptions;
-namespace University.DotnetLabs.Lab1.TracerLibrary.Test;
+
+namespace University.DotnetLabs.Lab1.TracerLibrary.Tests;
 
 [TestClass]
 public class TracerTests
@@ -45,5 +46,4 @@ public class TracerTests
         MethodStop();
         TraceResult result = _tracer.GetTraceResult();
     }
-
 }

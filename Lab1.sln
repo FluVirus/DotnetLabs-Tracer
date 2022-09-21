@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleSection", "ConsoleSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TracerLibrary", "TracerLibrary\TracerLibrary.csproj", "{F010707C-BA28-4C30-B7D4-E41DBD1294F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TracerLibrary.Test", "TracerLibrary.Test\TracerLibrary.Test.csproj", "{C7F8D5F7-30D1-4131-AF27-1A2265E33D58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TracerLibrary.Tests", "TracerLibrary.Tests\TracerLibrary.Tests.csproj", "{C7F8D5F7-30D1-4131-AF27-1A2265E33D58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

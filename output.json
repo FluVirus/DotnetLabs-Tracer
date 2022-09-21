@@ -2,74 +2,86 @@
   "threads": [
     {
       "id": "1",
-      "time": "492,3576 ms",
+      "time": "352,8509 ms",
       "methods": [
         {
           "name": "Main",
           "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-          "time": "492 ms"
-        }
-      ]
-    },
-    {
-      "id": "8",
-      "time": "100,3434 ms",
-      "methods": [
-        {
-          "name": "\u003CMain\u003Eb__5_0",
-          "class": "University.DotnetLabs.Lab1.ConsoleSection.Program\u002B\u003C\u003Ec",
-          "time": "100 ms"
+          "time": "352 ms",
+          "methods": [
+            {
+              "name": "Method1",
+              "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
+              "time": "17 ms"
+            },
+            {
+              "name": "Method2",
+              "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
+              "time": "31 ms"
+            }
+          ]
         }
       ]
     },
     {
       "id": "9",
-      "time": "491,5605 ms",
+      "time": "154,504 ms",
+      "methods": [
+        {
+          "name": "\u003CMain\u003Eb__7_0",
+          "class": "University.DotnetLabs.Lab1.ConsoleSection.Program\u002B\u003C\u003Ec",
+          "time": "154 ms"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "time": "352,0095 ms",
       "methods": [
         {
           "name": "Recursive",
           "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-          "time": "491 ms",
+          "time": "352 ms",
           "methods": [
             {
               "name": "Recursive",
               "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-              "time": "410 ms",
+              "time": "280 ms",
               "methods": [
                 {
                   "name": "Recursive",
                   "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                  "time": "262 ms",
+                  "time": "243 ms",
                   "methods": [
                     {
                       "name": "Recursive",
                       "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                      "time": "210 ms",
+                      "time": "209 ms",
                       "methods": [
                         {
                           "name": "Recursive",
                           "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                          "time": "179 ms",
+                          "time": "168 ms",
                           "methods": [
                             {
                               "name": "Recursive",
                               "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                              "time": "155 ms",
+                              "time": "142 ms",
                               "methods": [
                                 {
                                   "name": "Recursive",
                                   "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                                  "time": "127 ms",
+                                  "time": "113 ms",
                                   "methods": [
                                     {
                                       "name": "Recursive",
                                       "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                                      "time": "87 ms",
+                                      "time": "85 ms",
                                       "methods": [
                                         {
                                           "name": "Recursive",
                                           "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                                          "time": "56 ms",
+                                          "time": "55 ms",
                                           "methods": [
                                             {
                                               "name": "Recursive",

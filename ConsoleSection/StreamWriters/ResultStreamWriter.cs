@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using University.DotnetLabs.Lab1.TracerLibrary;
+﻿using University.DotnetLabs.Lab1.TracerLibrary;
 
 namespace University.DotnetLabs.Lab1.ConsoleSection.StreamWriters;
 

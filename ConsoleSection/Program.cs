@@ -24,7 +24,28 @@ class Program
         }
         _tracer.StopTrace();
     }
-    
+
+    static private void Method1()
+    {
+        _tracer.StartTrace();
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine("Hi From Method1");
+        }
+        _tracer.StopTrace();
+    }
+
+    static private void Method2()
+    {
+        _tracer.StartTrace();
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine("Hi From Method2");
+        }
+        _tracer.StopTrace();
+    }
+
+
     static private readonly ITracer _tracer = new Tracer();
     static void Main(string[] args)
     {
@@ -45,6 +66,8 @@ class Program
         {
             Console.WriteLine("Hi from main thread");
         }
+        Method1();
+        Method2();
         thread.Join();
         thread2.Join();
         _tracer.StopTrace();
