@@ -27,17 +27,17 @@ public sealed class ResultJsonWriter : ResultStreamWriter, IDisposable
     }
     private void WriteMethods(ICollection<MethodData> methods) 
     {
-        _jsonWriter.WriteStartArray(methodInternalMethodsProperty);
         foreach (MethodData method in methods)
         {
             _jsonWriter.WriteStartObject();
             _jsonWriter.WriteString(methodNameProperty, method.MethodName);
             _jsonWriter.WriteString(methodClassProperty, method.ClassName);
             _jsonWriter.WriteString(methodDurationProperty, $"{method.Duration.ElapsedMilliseconds} ms");
+            _jsonWriter.WriteStartArray(methodInternalMethodsProperty);
             if (method.InternalMethods.Count > 0) WriteMethods(method.InternalMethods);
+            _jsonWriter.WriteEndArray();
             _jsonWriter.WriteEndObject();
         }
-        _jsonWriter.WriteEndArray();
     }
     public override void Write(TraceResult result)
     {
@@ -48,7 +48,9 @@ public sealed class ResultJsonWriter : ResultStreamWriter, IDisposable
             _jsonWriter.WriteStartObject();
             _jsonWriter.WriteString(threadIDProperty, $"{threadData.ID}");
             _jsonWriter.WriteString(threadDurationProperty, $"{threadData.Duration.TotalMilliseconds} ms");
+            _jsonWriter.WriteStartArray(methodInternalMethodsProperty);
             if (threadData.InternalMethods.Count > 0) WriteMethods(threadData.InternalMethods);
+            _jsonWriter.WriteEndArray();
             _jsonWriter.WriteEndObject();
         }
         _jsonWriter.WriteEndArray();
