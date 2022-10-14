@@ -39,7 +39,7 @@ public sealed class ResultXmlWriter : ResultStreamWriter, IDisposable
 
     public override void Write(TraceResult result)
     {
-        _xmlWriter.WriteStartDocument();
+        if (_xmlWriter.Settings?.ConformanceLevel == ConformanceLevel.Document) _xmlWriter.WriteStartDocument();
         _xmlWriter.WriteStartElement(rootTag);
         foreach (ThreadData threadData in result.Threads)
         {
@@ -50,6 +50,6 @@ public sealed class ResultXmlWriter : ResultStreamWriter, IDisposable
             _xmlWriter.WriteEndElement();
         }
         _xmlWriter.WriteEndElement();
-        _xmlWriter.WriteEndDocument();
+        if (_xmlWriter.Settings?.ConformanceLevel == ConformanceLevel.Document)  _xmlWriter.WriteEndDocument();
     }
 }

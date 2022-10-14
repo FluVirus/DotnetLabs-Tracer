@@ -7,8 +7,8 @@ namespace University.DotnetLabs.Lab1.ConsoleSection;
 
 class Program
 {
-    static private string XmlFilePath = "../../../../output.xml";
-    static private string JsonFilePath = "../../../../output.json"; 
+    static private string s_xmlFilePath = "../../../../output.xml";
+    static private string s_jsonFilePath = "../../../../output.json"; 
 
     static private int _x;
     static private void Recursive()
@@ -45,7 +45,6 @@ class Program
         _tracer.StopTrace();
     }
 
-
     static private readonly ITracer _tracer = new Tracer();
     static void Main(string[] args)
     {
@@ -73,40 +72,41 @@ class Program
         _tracer.StopTrace();
 
         TraceResult result = _tracer.GetTraceResult();
-       
-        FileStream XmlFileStream = new FileStream(XmlFilePath, FileMode.OpenOrCreate);
-        FileStream JsonFileStream = new FileStream(JsonFilePath, FileMode.OpenOrCreate);
-        XmlWriterSettings settings = new XmlWriterSettings();
-        settings.ConformanceLevel = ConformanceLevel.Document;
-        settings.Indent = true;
-        ResultStreamWriter fXmlWriter = new ResultXmlWriter(XmlFileStream, settings);
-        ResultStreamWriter cXmlWriter = new ResultXmlWriter(Console.OpenStandardOutput(), settings);
-        JsonWriterOptions options = new JsonWriterOptions();
-        options.Indented = true;
-        ResultStreamWriter fJsonWriter = new ResultJsonWriter(JsonFileStream, options);
-        ResultStreamWriter cJsonWriter = new ResultJsonWriter(Console.OpenStandardOutput(), options);
-        using (fXmlWriter)
+
+        using (FileStream xmlFileStream = new FileStream(s_xmlFilePath, FileMode.Create))
         {
-            fXmlWriter.Write(result);
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.ConformanceLevel = ConformanceLevel.Auto;
+            settings.WriteEndDocumentOnClose = true;
+            settings.Indent = true;
+            using (ResultStreamWriter fXmlWriter = new ResultXmlWriter(xmlFileStream, settings))
+            {
+                fXmlWriter.Write(result);
+            }
+            using (ResultStreamWriter cXmlWriter = new ResultXmlWriter(Console.OpenStandardOutput(), settings))
+            {
+                Console.WriteLine();
+                Console.WriteLine("----------------------------XML-----------------------------");
+                cXmlWriter.Write(result);
+            }
         }
-        using (fJsonWriter)
+
+        using (FileStream JsonFileStream = new FileStream(s_jsonFilePath, FileMode.Create))
         {
-            fJsonWriter.Write(result);
+            JsonWriterOptions options = new JsonWriterOptions();
+            options.SkipValidation = false;
+            options.Indented = true;
+            using (ResultStreamWriter fJsonWriter = new ResultJsonWriter(JsonFileStream, options)) 
+            {
+                fJsonWriter.Write(result);
+            }
+            using (ResultStreamWriter cJsonWriter = new ResultJsonWriter(Console.OpenStandardOutput(), options)) 
+            {
+                Console.WriteLine();
+                Console.WriteLine("----------------------------JSON-----------------------------");
+                cJsonWriter.Write(result);
+            }
         }
-        Console.WriteLine();
-        Console.WriteLine("----------------------------XML-----------------------------");
-        using (cXmlWriter)
-        {
-            cXmlWriter.Write(result);
-        }
-        Console.WriteLine();
-        Console.WriteLine("----------------------------JSON-----------------------------");
-        using (cJsonWriter)
-        {
-            cJsonWriter.Write(result);
-        }
-        XmlFileStream.Dispose();
-        JsonFileStream.Dispose();
         Console.ReadLine();
     }
 }
