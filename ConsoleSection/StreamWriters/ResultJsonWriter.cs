@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using System.Xml;
 using University.DotnetLabs.Lab1.TracerLibrary;
 
 namespace University.DotnetLabs.Lab1.ConsoleSection.StreamWriters;
@@ -21,10 +22,6 @@ public sealed class ResultJsonWriter : ResultStreamWriter, IDisposable
         _jsonWriter = new Utf8JsonWriter(stream, options);
     }
 
-    public override void Dispose()
-    {
-        _jsonWriter.Dispose();
-    }
     private void WriteMethods(ICollection<MethodData> methods) 
     {
         foreach (MethodData method in methods)
@@ -41,6 +38,9 @@ public sealed class ResultJsonWriter : ResultStreamWriter, IDisposable
     }
     public override void Write(TraceResult result)
     {
+        if (_disposed)
+            throw new ObjectDisposedException("This object has already been disposed");
+
         _jsonWriter.WriteStartObject();
         _jsonWriter.WriteStartArray(rootProperty);
         foreach (ThreadData threadData in result.Threads)
@@ -55,5 +55,23 @@ public sealed class ResultJsonWriter : ResultStreamWriter, IDisposable
         }
         _jsonWriter.WriteEndArray();
         _jsonWriter.WriteEndObject();
+    }
+
+    ~ResultJsonWriter()
+    {
+        if (!_disposed)
+            Dispose(false);
+    }
+    protected override void Dispose(bool disposing)
+    {
+        if (_disposed)
+            return;
+
+        if (disposing)
+        {
+            _jsonWriter.Dispose();
+        }
+
+        _disposed = true;
     }
 }

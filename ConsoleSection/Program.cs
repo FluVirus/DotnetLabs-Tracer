@@ -74,7 +74,7 @@ class Program
         TraceResult result = _tracer.GetTraceResult();
 
         using (FileStream xmlFileStream = new FileStream(s_xmlFilePath, FileMode.Create))
-        {
+        { 
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.ConformanceLevel = ConformanceLevel.Auto;
             settings.WriteEndDocumentOnClose = true;

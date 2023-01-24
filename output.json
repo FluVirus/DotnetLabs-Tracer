@@ -2,23 +2,23 @@
   "threads": [
     {
       "id": "1",
-      "time": "410,7758 ms",
+      "time": "344,8902 ms",
       "methods": [
         {
           "name": "Main",
           "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-          "time": "410 ms",
+          "time": "344 ms",
           "methods": [
             {
               "name": "Method1",
               "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-              "time": "33 ms",
+              "time": "30 ms",
               "methods": []
             },
             {
               "name": "Method2",
               "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-              "time": "42 ms",
+              "time": "29 ms",
               "methods": []
             }
           ]
@@ -26,70 +26,70 @@
       ]
     },
     {
-      "id": "8",
-      "time": "60,5219 ms",
+      "id": "9",
+      "time": "40,6936 ms",
       "methods": [
         {
           "name": "\u003CMain\u003Eb__7_0",
           "class": "University.DotnetLabs.Lab1.ConsoleSection.Program\u002B\u003C\u003Ec",
-          "time": "60 ms",
+          "time": "40 ms",
           "methods": []
         }
       ]
     },
     {
-      "id": "9",
-      "time": "410,2294 ms",
+      "id": "10",
+      "time": "342,5429 ms",
       "methods": [
         {
           "name": "Recursive",
           "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-          "time": "410 ms",
+          "time": "342 ms",
           "methods": [
             {
               "name": "Recursive",
               "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-              "time": "310 ms",
+              "time": "268 ms",
               "methods": [
                 {
                   "name": "Recursive",
                   "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                  "time": "280 ms",
+                  "time": "239 ms",
                   "methods": [
                     {
                       "name": "Recursive",
                       "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                      "time": "242 ms",
+                      "time": "208 ms",
                       "methods": [
                         {
                           "name": "Recursive",
                           "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                          "time": "211 ms",
+                          "time": "164 ms",
                           "methods": [
                             {
                               "name": "Recursive",
                               "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                              "time": "169 ms",
+                              "time": "134 ms",
                               "methods": [
                                 {
                                   "name": "Recursive",
                                   "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                                  "time": "136 ms",
+                                  "time": "105 ms",
                                   "methods": [
                                     {
                                       "name": "Recursive",
                                       "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                                      "time": "103 ms",
+                                      "time": "80 ms",
                                       "methods": [
                                         {
                                           "name": "Recursive",
                                           "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                                          "time": "68 ms",
+                                          "time": "53 ms",
                                           "methods": [
                                             {
                                               "name": "Recursive",
                                               "class": "University.DotnetLabs.Lab1.ConsoleSection.Program",
-                                              "time": "35 ms",
+                                              "time": "27 ms",
                                               "methods": []
                                             }
                                           ]

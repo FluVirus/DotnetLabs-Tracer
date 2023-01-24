@@ -19,13 +19,27 @@ public sealed class ResultXmlWriter : ResultStreamWriter, IDisposable
     {
         _xmlWriter = XmlWriter.Create(stream, settings);
     }
-    public override void Dispose()
+
+    ~ResultXmlWriter()
     {
-        _xmlWriter.Dispose();
+        if (!_disposed) 
+            Dispose(false);
+    }
+    protected override void Dispose(bool disposing)
+    {
+        if (_disposed)
+            return;
+
+        if (disposing) 
+        {
+            _xmlWriter.Dispose();
+        }
+
+        _disposed = true;
     }
 
     private void WriteMethods(ICollection<MethodData> methods)
-    {
+    {    
         foreach (MethodData method in methods)
         {
             _xmlWriter.WriteStartElement(methodTag);
@@ -39,6 +53,9 @@ public sealed class ResultXmlWriter : ResultStreamWriter, IDisposable
 
     public override void Write(TraceResult result)
     {
+        if (_disposed)
+            throw new ObjectDisposedException("This object has already been disposed");
+
         if (_xmlWriter.Settings?.ConformanceLevel == ConformanceLevel.Document) _xmlWriter.WriteStartDocument();
         _xmlWriter.WriteStartElement(rootTag);
         foreach (ThreadData threadData in result.Threads)
